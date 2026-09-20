@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Fullstack Agent</string>
+    <string name="settings_title">Launcher settings</string>
+
+    <!-- Buttons. The %1$s is the agent's name, the same four labels the
+         desktop puts on its shortcuts, so a person moving between their
+         phone and their desk sees the same words on both. -->
+    <string name="button_talk">Talk to %1$s</string>
+    <string name="button_hands">%1$s barehands</string>
+    <string name="button_chat">Chat with %1$s</string>
+    <string name="button_update">Update %1$s</string>
+    <string name="button_update_label">Update everything</string>
+    <string name="button_everything">Everything</string>
+    <string name="button_face">Open the face</string>
+    <string name="button_settings">Launcher settings</string>
+
+    <!-- Termux session names, shown in the notification and the session
+         list. Naming them after the action keeps eight "bash" sessions
+         from piling up indistinguishably. -->
+    <string name="session_talk">Talk to %1$s</string>
+    <string name="session_hands">%1$s barehands</string>
+    <string name="session_chat">Chat with %1$s</string>
+    <string name="session_all">%1$s (everything)</string>
+    <string name="session_update">Update %1$s</string>
+
+    <!-- The honest note shown when the voice is not installed. A button
+         that promises a voice it cannot produce is worse than none. -->
+    <string name="note_voice_off">Voice is not installed on this phone. The face, the hands, and the memory work; ask your agent to set up the voice, or use Chat.</string>
+
+    <!-- Toasts and dialogs. Every failure path states the fix, never
+         just the fact of the failure. -->
+    <string name="toast_start_refused">This phone refused to start Termux. Run this in Termux yourself:\n%1$s</string>
+    <string name="toast_start_failed">Could not start Termux: %1$s</string>
+    <string name="toast_no_browser">No browser found to open the page.</string>
+
+    <string name="dialog_termux_missing_title">Termux is not installed</string>
+    <string name="dialog_termux_missing_message">Everything here runs inside Termux. Install it from F-Droid or the GitHub releases — the Google Play copy is abandoned and its packages do not work.</string>
+    <string name="dialog_install_fdroid">F-Droid</string>
+    <string name="dialog_install_github">GitHub releases</string>
+    <string name="dialog_cancel">Cancel</string>
+
+    <!-- Settings form. -->
+    <string name="settings_installed">Installed pieces</string>
+    <string name="settings_name_hint">Agent name</string>
+    <string name="settings_home_hint">Agent home folder (inside Termux)</string>
+    <string name="settings_command_hint">Command that starts a typed session</string>
+    <string name="settings_face_hint">Default face</string>
+    <string name="settings_memory">The memory (ai-memory-vault)</string>
+    <string name="settings_face_switch">The face (ai-visualizer)</string>
+    <string name="settings_hands">The hands (barehands)</string>
+    <string name="settings_voice">The voice (backtalk)</string>
+    <string name="settings_save">Save</string>
+</resources>

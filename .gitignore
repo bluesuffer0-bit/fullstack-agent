@@ -1,3 +1,15 @@
 .DS_Store
 __pycache__/
 *.pyc
+
+# The Android launcher app's build output. The app is built in place, and
+# these folders are several megabytes of intermediates that reproduce from
+# source on any machine.
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+
+# Scratch folder used while validating the Android port against the
+# upstream pieces. Not part of the repo.
+.port-scratch/

@@ -1,0 +1,29 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- A circuit board: the face the app launches, in miniature. Traces
+         run from the corners to a central chip with the agent's initial,
+         the same motif the board face idles with. Adaptive icons crop to
+         a circle on some launchers, so nothing important lives near the
+         edge. -->
+    <path
+        android:fillColor="#1F9D55"
+        android:pathData="M30,30 L30,48 L36,48 L36,36 L48,36 L48,30 Z" />
+    <path
+        android:fillColor="#1F9D55"
+        android:pathData="M78,30 L78,48 L72,48 L72,36 L60,36 L60,30 Z" />
+    <path
+        android:fillColor="#1F9D55"
+        android:pathData="M30,78 L30,60 L36,60 L36,72 L48,72 L48,78 Z" />
+    <path
+        android:fillColor="#1F9D55"
+        android:pathData="M78,78 L78,60 L72,60 L72,72 L60,72 L60,78 Z" />
+    <path
+        android:fillColor="#B2703A"
+        android:pathData="M42,42 L66,42 L66,66 L42,66 Z" />
+    <path
+        android:fillColor="#101418"
+        android:pathData="M50,46 L58,46 L58,62 L54,62 L54,50 L50,50 Z" />
+</vector>

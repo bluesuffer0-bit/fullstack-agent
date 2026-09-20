@@ -1,0 +1,12 @@
+// Plugins are resolved at the module level; declaring them here as
+// apply-false keeps the version in one place per project.
+plugins {
+    id 'com.android.application' version '8.11.0' apply false
+    id 'org.jetbrains.kotlin.android' version '1.9.22' apply false
+}
+
+// A clean build is worth more than a clever one: registering the shared
+// toolchain here means the module does not need to repeat it.
+tasks.register('clean', Delete) {
+    delete rootProject.buildDir
+}

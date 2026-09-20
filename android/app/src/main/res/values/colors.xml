@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- A circuit-board palette, to match the face the app launches.
+         Primary is the board's trace green; secondary is the copper of
+         its pads. -->
+    <color name="primary">#1F9D55</color>
+    <color name="primary_dark">#157145</color>
+    <color name="secondary">#B2703A</color>
+    <color name="background">#101418</color>
+    <color name="surface">#1A1F26</color>
+
+    <color name="ic_launcher_background">#101418</color>
+</resources>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  One scrollable column. The buttons are ordered by how often they are
+  used, the same order the wizard's Phase 6 names them in.
+-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="?android:attr/colorBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/text_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textAppearance="?attr/textAppearanceHeadlineMedium"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/text_agent_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:textAppearance="?attr/textAppearanceTitleMedium"
+            android:textColor="?attr/colorPrimary"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/text_home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:textAppearance="?attr/textAppearanceBodySmall"
+            android:textColor="?android:attr/textColorSecondary"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/text_voice_note"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:visibility="gone"
+            android:gravity="center"
+            android:textAppearance="?attr/textAppearanceBodySmall"
+            android:textColor="?attr/colorError" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_talk"
+            style="@style/Widget.FullstackAgent.Button.Primary"
+            android:layout_marginTop="20dp"
+            app:icon="@drawable/ic_mic" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_hands"
+            style="@style/Widget.FullstackAgent.Button"
+            app:icon="@drawable/ic_hands" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_everything"
+            style="@style/Widget.FullstackAgent.Button"
+            android:text="@string/button_everything"
+            app:icon="@drawable/ic_face" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_face"
+            style="@style/Widget.FullstackAgent.Button.Outlined"
+            android:text="@string/button_face"
+            app:icon="@drawable/ic_open" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_chat"
+            style="@style/Widget.FullstackAgent.Button.Outlined"
+            app:icon="@drawable/ic_chat" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_update"
+            style="@style/Widget.FullstackAgent.Button.Outlined"
+            android:text="@string/button_update_label"
+            app:icon="@drawable/ic_update" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_settings"
+            style="@style/Widget.FullstackAgent.Button.Text"
+            android:text="@string/button_settings"
+            app:icon="@drawable/ic_settings" />
+
+    </LinearLayout>
+</ScrollView>

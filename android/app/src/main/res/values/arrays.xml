@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- The four faces the visualizer ships, in the order the gallery
+         lists them. Kept here rather than fetched, because the list is
+         part of the shipped app and changes only with a release. -->
+    <string-array name="faces">
+        <item>board</item>
+        <item>radial</item>
+        <item>rain</item>
+        <item>neural</item>
+    </string-array>
+</resources>

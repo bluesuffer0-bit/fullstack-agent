@@ -1,0 +1,67 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.fullstackagent.launcher'
+    compileSdk 36
+
+    defaultConfig {
+        applicationId "com.fullstackagent.launcher"
+        // API 26 is the floor because the face is an adaptive icon and
+        // because current Termux releases are well above it anyway; this
+        // app is meaningless without Termux installed.
+        minSdk 26
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        // The agent's name is baked into no string; it is read from the
+        // config screen, so one build serves any agent.
+        resValue "string", "app_version", versionName
+    }
+
+    buildTypes {
+        release {
+            // Off by default. The app is a four-button remote; the size
+            // saved by shrinking it is not worth a build that can break
+            // reflection-free Kotlin in a release-only way.
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+
+    buildFeatures {
+        // View binding keeps findViewById out of the Kotlin; no Compose,
+        // deliberately, so the offline toolchain builds it without a
+        // second compiler and its version-matching constraints.
+        viewBinding true
+    }
+
+    // Two source roots would collide under package com.fullstackagent.* if
+    // the kotlin dir were not declared; keeping Kotlin in src/main/kotlin
+    // is the AGP 8 convention and needs no extra declaration.
+}
+
+dependencies {
+    // Versions pinned to what the offline Maven cache carries, so a build
+    // with no network resolves every artifact from it.
+    implementation 'androidx.core:core-ktx:1.8.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.activity:activity-ktx:1.6.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+}

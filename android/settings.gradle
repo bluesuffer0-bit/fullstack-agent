@@ -1,0 +1,29 @@
+// fullstack-agent for Android: the launcher app.
+//
+// The desktop version puts four shortcuts on the Desktop; Android has no
+// desktop, so this app is one screen with the same four buttons. Each one
+// hands a command to Termux through its RunCommandService, which is the
+// same public entry point Termux:Widget itself uses.
+//
+// Repository blocks are declared here so the project also builds on an
+// ordinary machine; the PocketDev toolchain additionally injects a local
+// Maven mirror globally, so the offline cache is tried first either way.
+
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.name = "fullstack-agent"
+include ':app'
