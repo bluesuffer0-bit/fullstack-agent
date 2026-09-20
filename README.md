@@ -2,7 +2,7 @@
 
 > **Never used Claude Code?** Start at [jaredrhod.com](https://jaredrhod.com): pick your situation and it routes you to the right path.
 
-**Runs on:** Claude Code only; the installer itself is a Claude Code wizard. The $20 Pro plan is enough.
+**Runs on:** Claude Code only; the installer itself is a Claude Code wizard. The $20 Pro plan is enough. Android is a port in progress — see [Android](#android) below.
 
 Not an agent that writes full-stack code. **An agent that HAS a full stack: memory, voice, and face, plus an optional set of hands.** This repo assembles my whole setup on your machine in one guided conversation, and when it finishes, your screen is a living circuit board with your agent's name on the chip, and it speaks first:
 
@@ -44,6 +44,28 @@ $d="$env:USERPROFILE\.local\bin"; if (Test-Path "$d\claude.exe") { $env:Path="$d
 (The Windows command downloads the toolbox as a zip on purpose, so it works on a machine with no git installed. The installer sets up git for you during setup. Safe to paste as many times as you like: it skips the download when the toolbox is already there, and if an earlier attempt died partway and left a half-finished folder, it downloads again and finishes the job rather than assuming it was already done. If it tells you Claude Code is not installed yet, do the [start page](https://jaredrhod.com/start) first. Heads up for that step on Windows: the Claude Code installer downloads about 330 MB and prints nothing at all while it does, so leave that window alone until it says Installation complete.)
 
 Claude Code opens with the installer already talking to you. (The agent lives in a folder right in your home directory on purpose: on Macs, things that run in the background out of Documents get silently blocked by the system.) Everything after that is a conversation: it asks for your agent's name and personality (or hands you mine, Jarvis, ready to use), which pieces you want, and where your notes live. It does the installing, the configuring, and the wiring itself.
+
+## Android
+
+The whole stack also runs on an Android phone, through Termux — a real Linux environment that is an app. The memory, the face, and the hands work as they do on a desk (the face and the hands are plain web servers; the phone's browser shows them). The voice is the honest exception: it depends on native speech and audio libraries built for desktops, and push-to-talk's global key hook does not exist on a phone, so it may not build and the installer says so rather than claiming it works. The agent itself is whatever terminal agent you run in Termux.
+
+If you are on a phone, install [Termux from F-Droid or the GitHub releases](https://f-droid.org/packages/com.termux/) (the Play Store copy is abandoned and broken), then:
+
+```
+pkg update && pkg install -y python git
+mkdir -p ~/my-agent && cd ~/my-agent && git clone https://github.com/jaredrhod/fullstack-agent && cd fullstack-agent && claude "set me up"
+```
+
+If `claude` is not your agent's name in Termux, substitute it — the pieces attach to whatever it is by config paths.
+
+The Android port lives in three files in this repo, and each is the twin of a desktop file:
+
+- **`fullstack-agent-android.md`** — the setup wizard, in place of `fullstack-agent.md`. Same phases, same rules, with the Android differences said out loud (the vault lives in shared storage so Obsidian can reach it; the browser opens through an intent; the voice is the experiment).
+- **`start.android.sh`** and **`update.android.sh`** — in place of `start.sh` / `start.bat` and the update scripts. Same pieces, same order, same skipping of anything you did not install.
+- **`mkshortcuts.android.sh`** — the Android answer to the Desktop shortcuts: it writes four scripts that Termux:Widget runs from a home-screen widget, named after your agent.
+- **`android/`** — an optional launcher app: one screen with the same four buttons, which hands each command to Termux. Build it with `gradle assembleDebug` in that folder, or skip it; the widget covers the same ground. See [android/README.md](android/README.md).
+
+Android-specific problems are in [TROUBLESHOOTING.md](TROUBLESHOOTING.md), at the bottom.
 
 ## Already built some of this?
 
